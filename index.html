@@ -3,14 +3,48 @@ layout: default
 title: bezpozlátek
 ---
 
-<div class="clanek" style="max-width:760px; margin-top:40px;">
-  {% for post in site.posts %}
-  <article style="margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid #eee;">
-    <a href="{{ post.url }}" style="text-decoration:none; color:#111;">
-      <h2 style="font-size:1.4rem; margin-bottom:6px;">{{ post.title }}</h2>
+<div class="home-layout">
+
+  <!-- VLEVO: 2 připnuté články -->
+  <aside class="pinned-sidebar">
+    <h3>Doporučené</h3>
+    {% assign pinned = site.posts | where: "pinned", true | limit: 2 %}
+    {% for post in pinned %}
+    <a href="{{ post.url }}" class="pinned-card">
+      {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}">
+      {% endif %}
+      <div class="pinned-card-text">
+        <strong>{{ post.title }}</strong>
+        <span class="datum">{{ post.date | date: "%d. %m. %Y" }}</span>
+      </div>
     </a>
-    <span class="datum">{{ post.date | date: "%d. %m. %Y" }}</span>
-    <p>{{ post.excerpt }}</p>
-  </article>
-  {% endfor %}
+    {% endfor %}
+  </aside>
+
+  <!-- STŘED: hlavní hero článek (nejnovější) -->
+  <main class="hero-main">
+    {% assign hero = site.posts.first %}
+    <a href="{{ hero.url }}" class="hero-link">
+      {% if hero.image %}
+        <img src="{{ hero.image }}" alt="{{ hero.title }}" class="hero-img">
+      {% endif %}
+      <h1>{{ hero.title }}</h1>
+      <span class="datum">{{ hero.date | date: "%d. %m. %Y" }}</span>
+      <p>{{ hero.excerpt }}</p>
+      <span class="read-more">Číst dál →</span>
+    </a>
+  </main>
+
+  <!-- VPRAVO: archiv -->
+  <aside class="archive-sidebar">
+    <h3>Archiv</h3>
+    {% for post in site.posts %}
+    <a href="{{ post.url }}" class="archive-item">
+      <span class="archive-title">{{ post.title }}</span>
+      <span class="datum">{{ post.date | date: "%m. %Y" }}</span>
+    </a>
+    {% endfor %}
+  </aside>
+
 </div>
