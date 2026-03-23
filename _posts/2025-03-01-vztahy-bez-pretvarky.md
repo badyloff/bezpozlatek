@@ -2,6 +2,7 @@
 layout: post
 title: Vztahy bez přetvářky
 date: 2025-03-01
+pinned: true
 image: https://picsum.photos/seed/vztahy/800/450
 ---
 
