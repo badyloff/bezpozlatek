@@ -9,29 +9,84 @@
 <body>
 
   <header>
-    <h1>Bez pozlátka</h1>
-    <nav>
-      <a href="index.html">Články</a>
-      <a href="#">O mně</a>
-    </nav>
+    <div class="header-inner">
+      <div class="logo">Bez pozlátka</div>
+      <nav>
+        <a href="index.html">Články</a>
+        <a href="archiv.html">Archiv</a>
+      </nav>
+      <div class="search-wrap">
+        <input type="text" id="search-input" placeholder="Hledat..." onkeyup="hledej()">
+      </div>
+    </div>
   </header>
 
-  <main class="grid">
+  <div id="search-vysledky" class="search-vysledky" style="display:none;"></div>
 
-    <a href="prvni-clanek.html" class="card">
-      <img src="images/uvodni-foto-bezpozlatek.jpg" alt="První článek">
-      <div class="card-text">
-        <h2>Název prvního článku</h2>
-        <p class="datum">15. března 2025</p>
-        <p class="perex">Krátký popis článku — o čem to je...</p>
-      </div>
-    </a>
+  <main class="layout">
+
+    <!-- LEVÝ SLOUPEC: připnuté -->
+    <aside class="pripnute">
+      <h3>Připnuté</h3>
+      <ul>
+        <li><a href="prvni-clanek.html">Vítejte na blogu Bez pozlátka</a><span>Červen 2025</span></li>
+        <!-- další připnuté články přidávej sem -->
+      </ul>
+    </aside>
+
+    <!-- STŘED: aktuální článek -->
+    <section class="hlavni">
+      <a href="prvni-clanek.html" class="hlavni-card">
+        <img src="images/uvodni-foto-bezpozlatek.jpg" alt="První článek">
+        <h2>Vítejte na blogu Bez pozlátka</h2>
+        <p class="datum">Červen 2025</p>
+        <p class="perex">Tenhle blog vznikl bez velkých plánů. Jen chuť psát o věcech tak, jak jsou — bez příkras, bez filtrů.</p>
+      </a>
+    </section>
+
+    <!-- PRAVÝ SLOUPEC: poslední články -->
+    <aside class="posledni">
+      <h3>Poslední články</h3>
+      <ul>
+        <li><a href="prvni-clanek.html">Vítejte na blogu Bez pozlátka</a><span>Červen 2025</span></li>
+        <!-- další články přidávej sem -->
+      </ul>
+    </aside>
 
   </main>
 
   <footer>
     <p>© 2025 Bez pozlátka</p>
   </footer>
+
+  <script>
+    const clanky = [
+      { nazev: "Vítejte na blogu Bez pozlátka", url: "prvni-clanek.html", datum: "Červen 2025" },
+      // přidávej další články sem
+    ];
+
+    function hledej() {
+      const dotaz = document.getElementById("search-input").value.toLowerCase();
+      const vysledky = document.getElementById("search-vysledky");
+
+      if (dotaz.length < 2) {
+        vysledky.style.display = "none";
+        return;
+      }
+
+      const nalezene = clanky.filter(c => c.nazev.toLowerCase().includes(dotaz));
+
+      if (nalezene.length === 0) {
+        vysledky.innerHTML = "<p>Nic nenalezeno.</p>";
+      } else {
+        vysledky.innerHTML = nalezene.map(c =>
+          `<a href="${c.url}">${c.nazev} <span>${c.datum}</span></a>`
+        ).join("");
+      }
+
+      vysledky.style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
