@@ -148,7 +148,19 @@ body {
   letter-spacing: 1.5px;
   color: #999;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 600;\\
+}
+
+/* TOHLE PŘIDEJ SEM: */
+.pripnute h3 a,
+.posledni h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pripnute h3 a:hover,
+.posledni h3 a:hover {
+  color: inherit;
 }
 
 /* ===== LEVÝ SLOUPEC ===== */
