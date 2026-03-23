@@ -210,8 +210,8 @@ body {
 }
 
 .posledni li img {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   object-fit: cover;
   flex-shrink: 0;
   order: 2;
@@ -223,6 +223,7 @@ body {
   gap: 4px;
   flex: 1;
   order: 1;
+  min-width: 0;
 }
 
 .posledni-text a {
@@ -231,6 +232,10 @@ body {
   font-size: 0.85rem;
   font-weight: 500;
   line-height: 1.35;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .posledni-text a:hover {
@@ -240,6 +245,7 @@ body {
 .posledni-text span {
   font-size: 0.73rem;
   color: #bbb;
+  display: block;
 }
 
 /* ===== HLAVNÍ ČLÁNEK (střed) ===== */
@@ -409,12 +415,16 @@ footer {
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .pripnute {
     order: 2;
     border-right: none;
+    border-top: 1px solid #ddd;
     padding-right: 0;
+    padding-top: 24px;
+    margin-top: 24px;
   }
 
   .hlavni {
@@ -426,7 +436,40 @@ footer {
   .posledni {
     order: 3;
     border-left: none;
+    border-top: 1px solid #ddd;
     padding-left: 0;
+    padding-top: 24px;
+    margin-top: 24px;
+  }
+
+  /* Na mobilu — archiv jako 2 sloupce */
+  .posledni ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+
+  .posledni li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .posledni li img {
+    width: 100%;
+    height: 80px;
+    order: 1;
+    margin-bottom: 6px;
+  }
+
+  .posledni-text {
+    order: 2;
+  }
+
+  /* Na mobilu — levý sloupec jako 2 sloupce */
+  .pripnute ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
   }
 }
 
@@ -443,5 +486,13 @@ footer {
 
   .hlavni-card h2 {
     font-size: 1.25rem;
+  }
+
+  .posledni ul {
+    grid-template-columns: 1fr;
+  }
+
+  .pripnute ul {
+    grid-template-columns: 1fr;
   }
 }
