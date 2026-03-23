@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: post
 title: Vztahy bez přetvářky
@@ -13,6 +12,3 @@ Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibu
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.
 
 Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt.
-```
-
-Zkopíruj to do souboru a ulož. Pak pošli další 3 soubory!
