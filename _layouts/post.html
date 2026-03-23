@@ -33,14 +33,45 @@
 
     <h1 style="font-size:2rem; margin-bottom:8px;">{{ page.title }}</h1>
     <span class="datum">{{ page.date | date: "%d. %m. %Y" }}</span>
-   
+
     {% if page.subtitle %}
-  <p class="clanek-perex">{{ page.subtitle }}</p>
-{% endif %}
+    <p class="clanek-perex">{{ page.subtitle }}</p>
+    {% endif %}
 
     <div style="margin-top:32px;">
       {{ content }}
     </div>
+
+    <!-- O AUTOROVI -->
+    <div class="autor-box">
+      <img src="/images/autor.jpg" alt="Autor" class="autor-foto">
+      <div class="autor-text">
+        <strong>bezpozlátek</strong>
+        <p>Píšu o věcech, které mě zajímají. Bez pozlátků, bez přetvářky.</p>
+      </div>
+    </div>
+
+    <!-- PŘEDCHOZÍ / NÁSLEDUJÍCÍ -->
+    <div class="clanek-navigace">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url }}" class="nav-clanek nav-predchozi">
+        <span class="nav-smer">← Starší</span>
+        <span class="nav-titulek">{{ page.previous.title }}</span>
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+
+      {% if page.next.url %}
+      <a href="{{ page.next.url }}" class="nav-clanek nav-nasledujici">
+        <span class="nav-smer">Novější →</span>
+        <span class="nav-titulek">{{ page.next.title }}</span>
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+    </div>
+
   </div>
 
   <footer>© 2025 bezpozlátek.cz</footer>
