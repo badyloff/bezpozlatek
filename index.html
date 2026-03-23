@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Bez pozlátka</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bez pozlátka</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <header>
     <h1>Bez pozlátka</h1>
-    <p>Blog o věcech bez příkras.</p>
-    <ul>
-        <li><a href="prvni-clanek.html">Vítejte na blogu Bez pozlátka</a></li>
-    </ul>
+    <nav>
+      <a href="index.html">Články</a>
+      <a href="o-mne.html">O mně</a>
+    </nav>
+  </header>
+
+  <main class="grid">
+
+    <a href="prvni-clanek.html" class="card">
+      <img src="obrazky/prvni-clanek.jpg" alt="První článek">
+      <div class="card-text">
+        <h2>Název prvního článku</h2>
+        <p class="datum">15. března 2025</p>
+        <p class="perex">Krátký popis článku — o čem to je...</p>
+      </div>
+    </a>
+
+    <!-- Další články přidávej sem stejným způsobem -->
+
+  </main>
+
+  <footer>
+    <p>© 2025 Bez pozlátka</p>
+  </footer>
+
 </body>
 </html>
