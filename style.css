@@ -506,3 +506,14 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== HOVER NA FOTKY ===== */
+
+.pripnute .card img,
+.posledni .mini-card img {
+  transition: transform 0.3s ease;
+}
+
+.pripnute .card:hover img {
+  transform: scale(1.03);
+}
