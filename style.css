@@ -10,56 +10,31 @@ body {
   color: #111111;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER — dvouřádkový jako Substack ===== */
 
-header {
-  border-bottom: 1px solid #ddd;
-  padding: 18px 20px;
+.header-top {
+  padding: 16px 20px;
 }
 
-.header-inner {
+.header-top-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .logo {
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  white-space: nowrap;
   text-decoration: none;
   color: #111;
-  justify-self: start;
+  white-space: nowrap;
 }
 
 .logo:hover {
   color: #555;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
-  justify-self: center;
-}
-
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-nav a:hover {
-  color: #888;
-}
-
-.search-wrap {
-  justify-self: end;
 }
 
 .search-wrap input {
@@ -72,6 +47,32 @@ nav a:hover {
   font-family: inherit;
   background: transparent;
   color: #111;
+}
+
+.header-nav {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+.header-nav nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.header-nav nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-nav nav a:hover {
+  color: #888;
 }
 
 /* ===== VYHLEDÁVÁNÍ ===== */
@@ -109,7 +110,7 @@ nav a:hover {
   font-size: 0.9rem;
 }
 
-/* ===== HLAVNÍ LAYOUT — svislé linky jako Substack ===== */
+/* ===== HLAVNÍ LAYOUT ===== */
 
 .layout {
   max-width: 1200px;
@@ -120,25 +121,23 @@ nav a:hover {
   align-items: start;
 }
 
+/* Svislé linky jen přes výšku obsahu — ne přes celou stránku */
 .pripnute {
-  border-top: 1px solid #ddd;
   padding-top: 16px;
   padding-right: 40px;
-}
-
-.hlavni {
-  border-top: 1px solid #ddd;
-  padding-top: 16px;
-  padding-left: 40px;
-  padding-right: 40px;
-  border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
 }
 
-.posledni {
-  border-top: 1px solid #ddd;
+.hlavni {
   padding-top: 16px;
   padding-left: 40px;
+  padding-right: 40px;
+}
+
+.posledni {
+  padding-top: 16px;
+  padding-left: 40px;
+  border-left: 1px solid #ddd;
 }
 
 /* ===== POSTRANNÍ SLOUPCE ===== */
@@ -378,31 +377,13 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .header-inner {
-    display: flex;
+  .header-top-inner {
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    flex-shrink: 0;
-  }
-
-  nav {
-    gap: 16px;
-  }
-
-  nav a {
-    font-size: 0.75rem;
-  }
-
-  .search-wrap {
-    flex-shrink: 0;
   }
 
   .search-wrap input {
-    width: 80px;
+    width: 90px;
     font-size: 0.8rem;
   }
 
