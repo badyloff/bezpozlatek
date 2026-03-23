@@ -33,6 +33,10 @@
 
     <h1 style="font-size:2rem; margin-bottom:8px;">{{ page.title }}</h1>
     <span class="datum">{{ page.date | date: "%d. %m. %Y" }}</span>
+   
+    {% if page.subtitle %}
+  <p class="clanek-perex">{{ page.subtitle }}</p>
+{% endif %}
 
     <div style="margin-top:32px;">
       {{ content }}
