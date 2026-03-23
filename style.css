@@ -20,9 +20,9 @@ header {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
 }
 
@@ -33,6 +33,7 @@ header {
   white-space: nowrap;
   text-decoration: none;
   color: #111;
+  justify-self: start;
 }
 
 .logo:hover {
@@ -42,6 +43,7 @@ header {
 nav {
   display: flex;
   gap: 30px;
+  justify-self: center;
 }
 
 nav a {
@@ -54,6 +56,10 @@ nav a {
 
 nav a:hover {
   color: #888;
+}
+
+.search-wrap {
+  justify-self: end;
 }
 
 .search-wrap input {
@@ -103,7 +109,7 @@ nav a:hover {
   font-size: 0.9rem;
 }
 
-/* ===== HLAVNÍ LAYOUT ===== */
+/* ===== HLAVNÍ LAYOUT — svislé linky jako Substack ===== */
 
 .layout {
   max-width: 1200px;
@@ -111,17 +117,31 @@ nav a:hover {
   padding: 0 20px;
   display: grid;
   grid-template-columns: 220px 1fr 220px;
-  gap: 50px;
   align-items: start;
 }
 
-/* ===== POSTRANNÍ SLOUPCE ===== */
-
-.pripnute,
-.posledni {
-  border-top: 2px solid #111;
+.pripnute {
+  border-top: 1px solid #ddd;
   padding-top: 16px;
+  padding-right: 40px;
+  border-right: 1px solid #ddd;
 }
+
+.hlavni {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.posledni {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+  padding-left: 40px;
+  border-left: 1px solid #ddd;
+}
+
+/* ===== POSTRANNÍ SLOUPCE ===== */
 
 .pripnute h3,
 .posledni h3 {
@@ -169,21 +189,7 @@ nav a:hover {
   color: #bbb;
 }
 
-/* ===== HLAVNÍ ČLÁNEK — barevné linky jako Substack ===== */
-
-.hlavni {
-  border-top: 2px solid #111;
-  padding-top: 0;
-  position: relative;
-}
-
-.hlavni::before {
-  content: "";
-  display: block;
-  height: 4px;
-  background: linear-gradient(90deg, #e63946, #f4a261, #2a9d8f, #457b9d);
-  margin-bottom: 16px;
-}
+/* ===== HLAVNÍ ČLÁNEK (střed) ===== */
 
 .hlavni-card {
   text-decoration: none;
@@ -351,13 +357,45 @@ footer {
   .layout {
     grid-template-columns: 1fr;
   }
-  .pripnute { order: 2; }
-  .hlavni   { order: 1; }
-  .posledni { order: 3; }
+
+  .pripnute {
+    order: 2;
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .hlavni {
+    order: 1;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .posledni {
+    order: 3;
+    border-left: none;
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 480px) {
-  .header-inner { flex-wrap: wrap; }
-  .search-wrap input { width: 120px; }
-  .hlavni-card h2 { font-size: 1.25rem; }
+  .header-inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  nav {
+    justify-self: start;
+  }
+
+  .search-wrap {
+    justify-self: start;
+  }
+
+  .search-wrap input {
+    width: 120px;
+  }
+
+  .hlavni-card h2 {
+    font-size: 1.25rem;
+  }
 }
