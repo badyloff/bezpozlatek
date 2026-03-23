@@ -379,20 +379,31 @@ footer {
 
 @media (max-width: 480px) {
   .header-inner {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex-shrink: 0;
   }
 
   nav {
-    justify-self: start;
+    gap: 16px;
+  }
+
+  nav a {
+    font-size: 0.75rem;
   }
 
   .search-wrap {
-    justify-self: start;
+    flex-shrink: 0;
   }
 
   .search-wrap input {
-    width: 120px;
+    width: 80px;
+    font-size: 0.8rem;
   }
 
   .hlavni-card h2 {
