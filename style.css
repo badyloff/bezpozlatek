@@ -10,7 +10,7 @@ body {
   color: #111111;
 }
 
-/* ===== HEADER — dvouřádkový jako Substack ===== */
+/* ===== HEADER ===== */
 
 .header-top {
   padding: 16px 20px;
@@ -117,11 +117,10 @@ body {
   margin: 50px auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 220px 1fr 220px;
+  grid-template-columns: 240px 1fr 280px;
   align-items: start;
 }
 
-/* Svislé linky jen přes výšku obsahu — ne přes celou stránku */
 .pripnute {
   padding-top: 16px;
   padding-right: 40px;
@@ -140,7 +139,7 @@ body {
   border-left: 1px solid #ddd;
 }
 
-/* ===== POSTRANNÍ SLOUPCE ===== */
+/* ===== NADPISY SLOUPCŮ ===== */
 
 .pripnute h3,
 .posledni h3 {
@@ -152,38 +151,93 @@ body {
   font-weight: 600;
 }
 
-.pripnute ul,
+/* ===== LEVÝ SLOUPEC — větší fotka NAD textem ===== */
+
+.pripnute ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.pripnute li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid #efefef;
+  padding: 16px 0;
+}
+
+.pripnute li img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.pripnute li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.pripnute li a:hover {
+  color: #888;
+}
+
+.pripnute li span {
+  font-size: 0.73rem;
+  color: #bbb;
+}
+
+/* ===== PRAVÝ SLOUPEC — malá fotka NAPRAVO od textu ===== */
+
 .posledni ul {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
 
-.pripnute li,
 .posledni li {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   border-bottom: 1px solid #efefef;
   padding: 12px 0;
 }
 
-.pripnute li a,
-.posledni li a {
-  text-decoration: none;
-  color: #111;
-  font-size: 0.88rem;
-  line-height: 1.45;
-  font-weight: 500;
+.posledni li img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  flex-shrink: 0;
+  order: 2;
 }
 
-.pripnute li a:hover,
-.posledni li a:hover {
+.posledni-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  order: 1;
+}
+
+.posledni-text a {
+  text-decoration: none;
+  color: #111;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.posledni-text a:hover {
   color: #888;
 }
 
-.pripnute li span,
-.posledni li span {
+.posledni-text span {
   font-size: 0.73rem;
   color: #bbb;
 }
