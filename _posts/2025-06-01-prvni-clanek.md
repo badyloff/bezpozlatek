@@ -2,7 +2,7 @@
 layout: post
 title: První článek
 date: 2025-06-01
-image: https://picsum.photos/seed/prvni/800/450
+image: /images/uvodni-foto-bezpozlatek.jpg
 ---
 
 Tohle je můj první článek na tomto blogu. Dlouho jsem o tom přemýšlel a nakonec jsem se rozhodl začít psát. Ne proto, že bych chtěl někoho poučovat, ale prostě proto, že mám co říct.
