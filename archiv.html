@@ -1,58 +1,18 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archiv — bezpozlátek</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+layout: default
+title: Archiv
+---
 
-  <div id="header-placeholder"></div>
-
-  <main class="archiv">
-    <h2>Archiv článků</h2>
-    <ul class="archiv-seznam">
-      <li>
-        <img src="https://picsum.photos/seed/zpravy/72/48" alt="">
-        <div class="archiv-info">
-          <a href="archiv/clanek-2.html">Proč jsem přestal sledovat zprávy</a>
-          <span>Květen 2025</span>
-        </div>
-      </li>
-      <li>
-        <img src="https://picsum.photos/seed/penize/72/48" alt="">
-        <div class="archiv-info">
-          <a href="archiv/clanek-3.html">Peníze a klid</a>
-          <span>Duben 2025</span>
-        </div>
-      </li>
-      <li>
-        <img src="https://picsum.photos/seed/vztahy/72/48" alt="">
-        <div class="archiv-info">
-          <a href="archiv/clanek-4.html">Vztahy bez přetvářky</a>
-          <span>Březen 2025</span>
-        </div>
-      </li>
-      <li>
-        <img src="https://picsum.photos/seed/chyby/72/48" alt="">
-        <div class="archiv-info">
-          <a href="archiv/clanek-5.html">Co jsem se naučil z chyb</a>
-          <span>Únor 2025</span>
-        </div>
-      </li>
-      <li>
-        <img src="https://picsum.photos/seed/vitejte/72/48" alt="">
-        <div class="archiv-info">
-          <a href="archiv/prvni-clanek.html">Vítejte na blogu Bez pozlátka</a>
-          <span>Červen 2025</span>
-        </div>
-      </li>
-    </ul>
-  </main>
-
-  <div id="footer-placeholder"></div>
-  <script src="komponenty.js"></script>
-
-</body>
-</html>
+<main class="archiv">
+  <h2>Archiv článků</h2>
+  <ul class="archiv-seznam">
+    {% for post in site.posts %}
+    <li>
+      <div class="archiv-info">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span>{{ post.date | date: "%B %Y" }}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
