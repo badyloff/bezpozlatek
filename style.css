@@ -124,7 +124,6 @@ nav a:hover {
   border-top: 1px solid #ddd;
   padding-top: 16px;
   padding-right: 40px;
-  border-right: 1px solid #ddd;
 }
 
 .hlavni {
@@ -132,13 +131,14 @@ nav a:hover {
   padding-top: 16px;
   padding-left: 40px;
   padding-right: 40px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
 .posledni {
   border-top: 1px solid #ddd;
   padding-top: 16px;
   padding-left: 40px;
-  border-left: 1px solid #ddd;
 }
 
 /* ===== POSTRANNÍ SLOUPCE ===== */
