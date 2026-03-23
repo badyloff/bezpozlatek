@@ -12,11 +12,13 @@ title: bezpozlátek
       {% assign pinned = site.posts | where: "pinned", true | limit: 2 %}
       {% for post in pinned %}
       <li>
-        {% if post.image %}
-          <img src="{{ post.image }}" alt="{{ post.title }}">
-        {% endif %}
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <span>{{ post.date | date: "%d. %m. %Y" }}</span>
+        <a href="{{ post.url }}">
+          {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+          {% endif %}
+          <span class="pripnute-title">{{ post.title }}</span>
+          <span class="pripnute-datum">{{ post.date | date: "%d. %m. %Y" }}</span>
+        </a>
       </li>
       {% endfor %}
     </ul>
@@ -41,13 +43,15 @@ title: bezpozlátek
     <ul>
       {% for post in site.posts %}
       <li>
-        <div class="posledni-text">
-          <a href="{{ post.url }}">{{ post.title }}</a>
-          <span>{{ post.date | date: "%m. %Y" }}</span>
-        </div>
-        {% if post.image %}
-          <img src="{{ post.image }}" alt="{{ post.title }}">
-        {% endif %}
+        <a href="{{ post.url }}" class="posledni-link">
+          <div class="posledni-text">
+            <span class="posledni-title">{{ post.title }}</span>
+            <span class="posledni-datum">{{ post.date | date: "%m. %Y" }}</span>
+          </div>
+          {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+          {% endif %}
+        </a>
       </li>
       {% endfor %}
     </ul>
