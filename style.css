@@ -367,6 +367,17 @@ body {
   color: #bbb;
   white-space: nowrap;
 }
+.archiv-seznam li {
+  overflow: hidden;
+}
+
+.archiv-link img {
+  transition: transform 0.3s ease;
+}
+
+.archiv-link:hover img {
+  transform: scale(1.04);
+}
 
 /* ===== STRÁNKA ČLÁNKU ===== */
 
