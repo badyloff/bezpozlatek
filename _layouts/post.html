@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — bezpozlátek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="header-top">
+    <div class="header-top-inner">
+      <a href="/" class="logo">bezpozlátek</a>
+      <div class="search-wrap">
+        <input type="text" placeholder="Hledat...">
+      </div>
+    </div>
+  </div>
+
+  <div class="header-nav">
+    <nav>
+      <a href="/">Články</a>
+      <a href="/archiv">Archiv</a>
+    </nav>
+  </div>
+
+  <div class="clanek" style="max-width:760px; margin-top:40px;">
+    <a href="/" style="text-decoration:none; color:#999; font-size:0.9rem;">← Zpět</a>
+
+    {% if page.image %}
+    <img src="{{ page.image }}" alt="{{ page.title }}" style="width:100%; margin:24px 0; border-radius:4px;">
+    {% endif %}
+
+    <h1 style="font-size:2rem; margin-bottom:8px;">{{ page.title }}</h1>
+    <span class="datum">{{ page.date | date: "%d. %m. %Y" }}</span>
+
+    <div style="margin-top:32px;">
+      {{ content }}
+    </div>
+  </div>
+
+  <footer>© 2025 bezpozlátek.cz</footer>
+
+</body>
+</html>
