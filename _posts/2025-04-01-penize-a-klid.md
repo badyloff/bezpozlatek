@@ -2,6 +2,7 @@
 layout: post
 title: Peníze a klid
 date: 2025-04-01
+pinned: true
 image: https://picsum.photos/seed/penize/800/450
 ---
 
