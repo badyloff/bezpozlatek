@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #ffffff;
   color: #111111;
 }
@@ -13,7 +13,7 @@ body {
 /* ===== HEADER ===== */
 
 header {
-  border-bottom: 2px solid #111;
+  border-bottom: 1px solid #ddd;
   padding: 18px 20px;
 }
 
@@ -28,9 +28,15 @@ header {
 
 .logo {
   font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   white-space: nowrap;
+  text-decoration: none;
+  color: #111;
+}
+
+.logo:hover {
+  color: #555;
 }
 
 nav {
@@ -41,25 +47,25 @@ nav {
 nav a {
   text-decoration: none;
   color: #111;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: Arial, sans-serif;
 }
 
 nav a:hover {
-  color: #3aaa47;
+  color: #888;
 }
 
 .search-wrap input {
   border: none;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #bbb;
   outline: none;
   font-size: 0.85rem;
   padding: 4px 8px;
   width: 160px;
-  font-family: Arial, sans-serif;
+  font-family: inherit;
   background: transparent;
+  color: #111;
 }
 
 /* ===== VYHLEDÁVÁNÍ ===== */
@@ -88,7 +94,7 @@ nav a:hover {
 }
 
 .search-vysledky a:hover {
-  color: #3aaa47;
+  color: #888;
 }
 
 .search-vysledky p {
@@ -113,18 +119,18 @@ nav a:hover {
 
 .pripnute,
 .posledni {
-  border-top: 1px solid #ddd;
+  border-top: 2px solid #111;
   padding-top: 16px;
 }
 
 .pripnute h3,
 .posledni h3 {
-  font-family: Arial, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #aaa;
+  letter-spacing: 1.5px;
+  color: #999;
   margin-bottom: 16px;
+  font-weight: 600;
 }
 
 .pripnute ul,
@@ -132,7 +138,6 @@ nav a:hover {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
 }
 
 .pripnute li,
@@ -140,35 +145,44 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 12px;
+  border-bottom: 1px solid #efefef;
+  padding: 12px 0;
 }
 
 .pripnute li a,
 .posledni li a {
   text-decoration: none;
   color: #111;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
 .pripnute li a:hover,
 .posledni li a:hover {
-  color: #3aaa47;
+  color: #888;
 }
 
 .pripnute li span,
 .posledni li span {
-  font-size: 0.75rem;
-  color: #aaa;
-  font-family: Arial, sans-serif;
+  font-size: 0.73rem;
+  color: #bbb;
 }
 
-/* ===== HLAVNÍ ČLÁNEK (střed) ===== */
+/* ===== HLAVNÍ ČLÁNEK — barevné linky jako Substack ===== */
 
 .hlavni {
-  border-top: 1px solid #ddd;
-  padding-top: 16px;
+  border-top: 2px solid #111;
+  padding-top: 0;
+  position: relative;
+}
+
+.hlavni::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, #e63946, #f4a261, #2a9d8f, #457b9d);
+  margin-bottom: 16px;
 }
 
 .hlavni-card {
@@ -181,45 +195,48 @@ nav a:hover {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  display: block;
 }
 
 .hlavni-card h2 {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   margin-bottom: 8px;
   line-height: 1.3;
+  font-weight: 700;
 }
 
 .hlavni-card:hover h2 {
-  color: #3aaa47;
+  color: #555;
 }
 
 .hlavni-card .datum {
-  font-size: 0.8rem;
-  color: #aaa;
-  font-family: Arial, sans-serif;
-  margin-bottom: 12px;
+  font-size: 0.78rem;
+  color: #bbb;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .hlavni-card .perex {
-  font-size: 1rem;
-  color: #444;
+  font-size: 0.95rem;
+  color: #555;
   line-height: 1.7;
 }
 
 /* ===== ARCHIV STRÁNKA ===== */
 
 .archiv {
-  max-width: 700px;
+  max-width: 760px;
   margin: 60px auto;
   padding: 0 20px;
 }
 
 .archiv h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 30px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #111;
+  font-weight: 700;
 }
 
 .archiv-seznam {
@@ -230,69 +247,91 @@ nav a:hover {
 
 .archiv-seznam li {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid #f0f0f0;
+}
+
+.archiv-seznam li img {
+  width: 72px;
+  height: 48px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.archiv-seznam li .archiv-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex: 1;
+  gap: 12px;
 }
 
 .archiv-seznam li a {
   text-decoration: none;
   color: #111;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .archiv-seznam li a:hover {
-  color: #3aaa47;
+  color: #888;
 }
 
 .archiv-seznam li span {
-  font-size: 0.8rem;
-  color: #aaa;
-  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  color: #bbb;
   white-space: nowrap;
-  margin-left: 20px;
 }
 
 /* ===== STRÁNKA ČLÁNKU ===== */
 
 .clanek {
-  max-width: 680px;
+  max-width: 660px;
   margin: 60px auto;
   padding: 0 20px;
   line-height: 1.8;
 }
 
+.clanek-foto {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin-bottom: 32px;
+  display: block;
+}
+
 .clanek h1 {
   font-size: 2rem;
   margin-bottom: 10px;
-  line-height: 1.3;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 .clanek .datum {
   display: block;
-  font-size: 0.8rem;
-  color: #aaa;
-  font-family: Arial, sans-serif;
-  margin-bottom: 40px;
+  font-size: 0.78rem;
+  color: #bbb;
+  margin-bottom: 36px;
 }
 
 .clanek p {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-size: 1.05rem;
+  color: #222;
 }
 
 .zpet {
   display: inline-block;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   text-decoration: none;
-  color: #aaa;
-  font-size: 0.85rem;
-  font-family: Arial, sans-serif;
+  color: #bbb;
+  font-size: 0.82rem;
 }
 
 .zpet:hover {
-  color: #3aaa47;
+  color: #888;
 }
 
 /* ===== FOOTER ===== */
@@ -301,10 +340,9 @@ footer {
   text-align: center;
   padding: 40px;
   border-top: 1px solid #eee;
-  font-size: 0.8rem;
-  color: #aaa;
+  font-size: 0.78rem;
+  color: #bbb;
   margin-top: 60px;
-  font-family: Arial, sans-serif;
 }
 
 /* ===== RESPONZIVITA ===== */
@@ -313,30 +351,13 @@ footer {
   .layout {
     grid-template-columns: 1fr;
   }
-
-  .pripnute {
-    order: 2;
-  }
-
-  .hlavni {
-    order: 1;
-  }
-
-  .posledni {
-    order: 3;
-  }
+  .pripnute { order: 2; }
+  .hlavni   { order: 1; }
+  .posledni { order: 3; }
 }
 
 @media (max-width: 480px) {
-  .header-inner {
-    flex-wrap: wrap;
-  }
-
-  .search-wrap input {
-    width: 120px;
-  }
-
-  .hlavni-card h2 {
-    font-size: 1.3rem;
-  }
+  .header-inner { flex-wrap: wrap; }
+  .search-wrap input { width: 120px; }
+  .hlavni-card h2 { font-size: 1.25rem; }
 }
