@@ -8,20 +8,7 @@
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="index.html" class="logo">bezpozlátek</a>
-      <nav>
-        <a href="index.html">Články</a>
-        <a href="archiv.html">Archiv</a>
-      </nav>
-      <div class="search-wrap">
-        <input type="text" id="search-input" placeholder="Hledat..." onkeyup="hledej()">
-      </div>
-    </div>
-  </header>
-
-  <div id="search-vysledky" class="search-vysledky" style="display:none;"></div>
+  <div id="header-placeholder"></div>
 
   <main class="layout">
 
@@ -29,7 +16,7 @@
       <h3>Připnuté</h3>
       <ul>
         <li>
-          <a href="archiv/prvni-clanek.html">Vítejte na blogu Bez pozlátka</a>
+          <a href="archiv/prvni-clanek.html">Vítejte na blogu bezpozlátek.cz</a>
           <span>Červen 2025</span>
         </li>
         <li>
@@ -72,7 +59,7 @@
           <span>Únor 2025</span>
         </li>
         <li>
-          <a href="archiv/prvni-clanek.html">Vítejte na blogu bezpozlátek.cz</a>
+          <a href="archiv/prvni-clanek.html">Vítejte na blogu Bez pozlátka</a>
           <span>Červen 2025</span>
         </li>
       </ul>
@@ -80,30 +67,8 @@
 
   </main>
 
-  <footer>
-    <p>© 2025 bezpozlátek</p>
-  </footer>
-
-  <script>
-    const clanky = [
-      { nazev: "Vítejte na blogu Bez pozlátka", url: "archiv/prvni-clanek.html", datum: "Červen 2025" },
-      { nazev: "Proč jsem přestal sledovat zprávy", url: "archiv/clanek-2.html", datum: "Květen 2025" },
-      { nazev: "Peníze a klid", url: "archiv/clanek-3.html", datum: "Duben 2025" },
-      { nazev: "Vztahy bez přetvářky", url: "archiv/clanek-4.html", datum: "Březen 2025" },
-      { nazev: "Co jsem se naučil z chyb", url: "archiv/clanek-5.html", datum: "Únor 2025" },
-    ];
-
-    function hledej() {
-      const dotaz = document.getElementById("search-input").value.toLowerCase();
-      const vysledky = document.getElementById("search-vysledky");
-      if (dotaz.length < 2) { vysledky.style.display = "none"; return; }
-      const nalezene = clanky.filter(c => c.nazev.toLowerCase().includes(dotaz));
-      vysledky.innerHTML = nalezene.length === 0
-        ? "<p>Nic nenalezeno.</p>"
-        : nalezene.map(c => `<a href="${c.url}">${c.nazev} <span>${c.datum}</span></a>`).join("");
-      vysledky.style.display = "block";
-    }
-  </script>
+  <div id="footer-placeholder"></div>
+  <script src="komponenty.js"></script>
 
 </body>
 </html>
