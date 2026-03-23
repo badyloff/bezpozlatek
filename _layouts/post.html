@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} — bezpozlátek</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
   </div>
 
   <div class="clanek" style="max-width:760px; margin-top:40px;">
-    <a href="/" style="text-decoration:none; color:#999; font-size:0.9rem;">← Zpět</a>
+    <a href="javascript:history.back()" class="zpet">← Zpět</a>
 
     {% if page.image %}
     <img src="{{ page.image }}" alt="{{ page.title }}" style="width:100%; margin:24px 0; border-radius:4px;">
