@@ -62,7 +62,7 @@ nav a:hover {
   background: transparent;
 }
 
-/* ===== VYHLEDÁVÁNÍ výsledky ===== */
+/* ===== VYHLEDÁVÁNÍ ===== */
 
 .search-vysledky {
   max-width: 1200px;
@@ -89,6 +89,12 @@ nav a:hover {
 
 .search-vysledky a:hover {
   color: #3aaa47;
+}
+
+.search-vysledky p {
+  padding: 10px 0;
+  color: #aaa;
+  font-size: 0.9rem;
 }
 
 /* ===== HLAVNÍ LAYOUT ===== */
@@ -201,7 +207,7 @@ nav a:hover {
   line-height: 1.7;
 }
 
-/* ===== ARCHIV ===== */
+/* ===== ARCHIV STRÁNKA ===== */
 
 .archiv {
   max-width: 700px;
@@ -318,5 +324,19 @@ footer {
 
   .posledni {
     order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .search-wrap input {
+    width: 120px;
+  }
+
+  .hlavni-card h2 {
+    font-size: 1.3rem;
   }
 }
