@@ -6,33 +6,34 @@
 
 body {
   font-family: Georgia, serif;
-  background: #fff;
-  color: #111;
+  background: #ffffff;
+  color: #000000;
 }
 
 header {
   text-align: center;
   padding: 40px 20px 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #000000;
 }
 
 header h1 {
   font-size: 2rem;
   letter-spacing: 2px;
   margin-bottom: 15px;
+  color: #000000;
 }
 
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #111;
+  color: #000000;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #3aaa47;
 }
 
 main.grid {
@@ -46,7 +47,7 @@ main.grid {
 
 .card {
   text-decoration: none;
-  color: #111;
+  color: #000000;
   display: block;
 }
 
@@ -61,12 +62,14 @@ main.grid {
 .card h2 {
   font-size: 1.1rem;
   margin-bottom: 6px;
+  color: #000000;
 }
 
 .datum {
   font-size: 0.8rem;
-  color: #888;
+  color: #3aaa47;
   margin-bottom: 8px;
+  font-weight: bold;
 }
 
 .perex {
@@ -76,13 +79,14 @@ main.grid {
 }
 
 .card:hover h2 {
+  color: #3aaa47;
   text-decoration: underline;
 }
 
 footer {
   text-align: center;
   padding: 40px;
-  border-top: 1px solid #eee;
+  border-top: 2px solid #000000;
   font-size: 0.85rem;
   color: #888;
   margin-top: 60px;
