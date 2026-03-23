@@ -29,18 +29,28 @@
     <aside class="pripnute">
       <h3>Připnuté</h3>
       <ul>
-        <li><a href="prvni-clanek.html">Vítejte na blogu Bez pozlátka</a><span>Červen 2025</span></li>
-        <!-- další připnuté články přidávej sem -->
+        <li>
+          <a href="archiv/prvni-clanek.html">Vítejte na blogu Bez pozlátka</a>
+          <span>Červen 2025</span>
+        </li>
+        <li>
+          <a href="archiv/clanek-3.html">Peníze a klid</a>
+          <span>Duben 2025</span>
+        </li>
+        <li>
+          <a href="archiv/clanek-5.html">Co jsem se naučil z chyb</a>
+          <span>Únor 2025</span>
+        </li>
       </ul>
     </aside>
 
-    <!-- STŘED: aktuální článek -->
+    <!-- STŘED: nejaktuálnější článek -->
     <section class="hlavni">
-      <a href="prvni-clanek.html" class="hlavni-card">
-        <img src="images/uvodni-foto-bezpozlatek.jpg" alt="První článek">
-        <h2>Vítejte na blogu Bez pozlátka</h2>
-        <p class="datum">Červen 2025</p>
-        <p class="perex">Tenhle blog vznikl bez velkých plánů. Jen chuť psát o věcech tak, jak jsou — bez příkras, bez filtrů.</p>
+      <a href="archiv/clanek-2.html" class="hlavni-card">
+        <img src="images/uvodni-foto-bezpozlatek.jpg" alt="Proč jsem přestal sledovat zprávy">
+        <h2>Proč jsem přestal sledovat zprávy</h2>
+        <p class="datum">Květen 2025</p>
+        <p class="perex">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — a proč na tom záleží.</p>
       </a>
     </section>
 
@@ -48,8 +58,26 @@
     <aside class="posledni">
       <h3>Poslední články</h3>
       <ul>
-        <li><a href="prvni-clanek.html">Vítejte na blogu Bez pozlátka</a><span>Červen 2025</span></li>
-        <!-- další články přidávej sem -->
+        <li>
+          <a href="archiv/clanek-2.html">Proč jsem přestal sledovat zprávy</a>
+          <span>Květen 2025</span>
+        </li>
+        <li>
+          <a href="archiv/clanek-3.html">Peníze a klid</a>
+          <span>Duben 2025</span>
+        </li>
+        <li>
+          <a href="archiv/clanek-4.html">Vztahy bez přetvářky</a>
+          <span>Březen 2025</span>
+        </li>
+        <li>
+          <a href="archiv/clanek-5.html">Co jsem se naučil z chyb</a>
+          <span>Únor 2025</span>
+        </li>
+        <li>
+          <a href="archiv/prvni-clanek.html">Vítejte na blogu Bez pozlátka</a>
+          <span>Červen 2025</span>
+        </li>
       </ul>
     </aside>
 
@@ -61,29 +89,21 @@
 
   <script>
     const clanky = [
-      { nazev: "Vítejte na blogu Bez pozlátka", url: "prvni-clanek.html", datum: "Červen 2025" },
-      // přidávej další články sem
+      { nazev: "Vítejte na blogu Bez pozlátka", url: "archiv/prvni-clanek.html", datum: "Červen 2025" },
+      { nazev: "Proč jsem přestal sledovat zprávy", url: "archiv/clanek-2.html", datum: "Květen 2025" },
+      { nazev: "Peníze a klid", url: "archiv/clanek-3.html", datum: "Duben 2025" },
+      { nazev: "Vztahy bez přetvářky", url: "archiv/clanek-4.html", datum: "Březen 2025" },
+      { nazev: "Co jsem se naučil z chyb", url: "archiv/clanek-5.html", datum: "Únor 2025" },
     ];
 
     function hledej() {
       const dotaz = document.getElementById("search-input").value.toLowerCase();
       const vysledky = document.getElementById("search-vysledky");
-
-      if (dotaz.length < 2) {
-        vysledky.style.display = "none";
-        return;
-      }
-
+      if (dotaz.length < 2) { vysledky.style.display = "none"; return; }
       const nalezene = clanky.filter(c => c.nazev.toLowerCase().includes(dotaz));
-
-      if (nalezene.length === 0) {
-        vysledky.innerHTML = "<p>Nic nenalezeno.</p>";
-      } else {
-        vysledky.innerHTML = nalezene.map(c =>
-          `<a href="${c.url}">${c.nazev} <span>${c.datum}</span></a>`
-        ).join("");
-      }
-
+      vysledky.innerHTML = nalezene.length === 0
+        ? "<p>Nic nenalezeno.</p>"
+        : nalezene.map(c => `<a href="${c.url}">${c.nazev} <span>${c.datum}</span></a>`).join("");
       vysledky.style.display = "block";
     }
   </script>
