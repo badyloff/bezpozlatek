@@ -4,6 +4,7 @@ title: Vztahy bez přetvářky
 date: 2025-03-01
 pinned: true
 image: https://picsum.photos/seed/vztahy/800/450
+subtitle: "Tady napíšeš perex."
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint.
